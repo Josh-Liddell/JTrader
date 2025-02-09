@@ -1,0 +1,4 @@
+[
+    {"flags": ["filename"], "kwargs": {"nargs": "+", "help": "Filename(s) of your historical price data"}},
+    {"flags": ["-v", "--version"], "kwargs": {"action": "version", "version": "JTrade v1.0"}}
+]
