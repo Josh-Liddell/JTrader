@@ -1,9 +1,25 @@
-[
-    {"flags": ["-h", "--help"], "kwargs": {"action":"help", "help": "• Show this help message and exit"}},
-    {"flags": ["-v", "--version"], "kwargs": {"action": "version", "version": "JTrade v1.0", "help": "• Show program version number and exit"}},
-    {"flags": ["-mr", "--mean-reversion"], "kwargs": {"dest": "mr", "action": "store_true", "help": "• Use the mean reversion strategy"}},
-    {"flags": ["-t", "--ticker"], "kwargs": {"nargs": "+", "help": "• Ticker(s) of your historical price data"}},
-    {"flags": ["-f", "--filename"], "kwargs": {"nargs": "+", "help": "• Filename(s) of your historical price data"}},
-    {"flags": ["-d", "--directory"], "kwargs": {"help": "• A directory of your historical price data files"}},
-    {"flags": ["-y", "--years"], "kwargs": {"metavar": "N", "help": "• If using tickers, use this to specify N years worth of data"}}
-]
+{
+    "general": [
+	{"flags": ["-h", "--help"], "kwargs": {"action":"help", "help": "• Show this help message and exit"}},
+	{"flags": ["-v", "--version"], "kwargs": {"action": "version", "version": "JTrader v1.0", "help": "• Show program version number and exit"}}
+    ],
+    
+    "strategy": [
+	{"flags": ["-mr", "--mean-reversion"], "kwargs": {"dest": "mr", "action": "store_true", "help": "• Use the mean reversion strategy"}},
+	{"flags": ["-sma", "--simple-moving-avg"], "kwargs": {"dest": "sma", "action": "store_true", "help": "• Use the sma strategy"}},
+	{"flags": ["-s", "--script"], "kwargs": {"help": "• Use your own trading strategy with the data specified"}}
+    ],
+
+    "price": [
+	{"flags": ["-t", "--ticker"], "kwargs": {"nargs": "+", "help": "• Ticker(s) of your historical price data"}},
+	{"flags": ["-f", "--filename"], "kwargs": {"nargs": "+", "help": "• Filename(s) of your historical price data"}},
+	{"flags": ["-d", "--directory"], "kwargs": {"help": "• A directory of your historical price data files"}},
+	{"flags": ["-y", "--years"], "kwargs": {"metavar": "N", "help": "• If using tickers, use this to specify N years worth of data"}}
+    ],
+
+    "output": [
+	{"flags": ["-p", "--print"], "kwargs": {"action": "store_true", "help": "• Print the output details to the console"}},
+	{"flags": ["-j", "--json"], "kwargs": {"action": "store_true", "help": "• Specify output type to be .json"}},
+	{"flags": ["-tx", "--text"], "kwargs": {"action": "store_true", "help": "• Specify output type to be .txt"}}
+    ]
+}
