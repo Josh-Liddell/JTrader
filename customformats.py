@@ -2,7 +2,7 @@ import argparse as ap
 import textwrap
 
 
-# In this file I am overriding methods to allow me to customize the help and version outputs
+# In this file I am overriding methods to allow me to customize the help output
 
 # Changing the usage prefix, adding logo before and a newline after the help output
 class CustomFormatter(ap.HelpFormatter):
@@ -27,6 +27,8 @@ class CustomFormatter(ap.HelpFormatter):
 
         # This puts my logo before the rest of the default help page
         return textwrap.dedent(logo) + '\n' + super().format_help() + '\n'
+
+# NOTE: I may not need to do the customer formatter I may be able to change another method inside of ArgumentParser instead....look into it
 
 
 # Here I customzed the Argument parser to change the order of the help outputs, and if -h is called to use the custom formatting

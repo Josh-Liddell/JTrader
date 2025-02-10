@@ -1,22 +1,17 @@
 #!/home/joshua/.venv/bin/python3
 import json
 from customformats import CustomArgParser
-# from customformats import CustomFormatter
-# from customformats import CustomVersionAction
 
 
 class JTrader():
     def __init__(self):
-
         self.parser = CustomArgParser(
             # Here I am settin up the help menu
             description='A tool to run trade strategies on historical price data',
             usage='jtrader [STRATEGY] [PRICE DATA] [OUTPUT OPTION]',
             epilog='Have fun trading!',
             add_help=False,
-
-            # formatter_class needs a callable (a function or class) that will create the formatter instance
-            # formatter_class=CustomFormatter
+            allow_abbrev=False
         )
 
         with open('config.json', 'r') as file:
@@ -38,8 +33,6 @@ class JTrader():
                 # This is automatically unpacking the values in a way that makes them behave as comma-separated arguments!
                 # The * unpacks the list into separate positional arguments
                 # The ** unpacks the dictionary into keyword arguments
-
-        # self.parser.add_argument('-v', '--version', action=CustomVersionAction, version='JTrader v1.0', help="• Show program version number and exit")
 
     def run(self):
         # NOTE: This function below grabs the aguments passed in at the command line and assigns them to args
